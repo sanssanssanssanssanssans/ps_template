@@ -10,12 +10,13 @@ OUTPUT = "main/test/output.txt"
 ANSWER = "main/test/answer.txt"
 CMD = [
     "g++",
-    CPP,
+    "-std=c++17",
+    "-DLOCAL",
     "-O2",
-    "--std=c++17",
-    "-Wall",
+    "-fsanitize=undefined",
+    CPP,
     "-o",
-    "solve.exe" if os.name == "nt" else "main",
+    "main/solve.exe" if os.name == "nt" else "main/solve",
 ]
 
 
